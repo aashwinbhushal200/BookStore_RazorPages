@@ -32,7 +32,7 @@ namespace BookStore_RazorPages.Pages.Categories
             {
                 _db.Categories.Remove(category);
                 _db.SaveChanges();
-                //TempData["success"] = "Category updated successfully";
+                TempData["success"] = "Category deleted successfully";
                 return RedirectToPage("Index");
             }
             return RedirectToPage("Index");
