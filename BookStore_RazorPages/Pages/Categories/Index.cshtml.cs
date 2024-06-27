@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BookStore_RazorPages.Pages.Categories
 {
+    [BindProperties]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _db;

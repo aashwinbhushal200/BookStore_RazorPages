@@ -1,0 +1,38 @@
+﻿@page
+@model BookStore_RazorPages.Pages.Categories.CreateModel
+<form method="post" class="row">
+    <div class="border p-3">
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        <div class="form-floating py-2 col-12">
+            <input asp-for="category.Name" class="form-control border-0 shadow" />
+            @* tag helper sp-for="Name" *@
+            <label asp-for="category.Name" class="ms-2"></label>
+            @* server side validation *@
+            <span asp-validation-for="category.Name" class="text-danger"></span>
+        </div>
+        <div class="form-floating py-2 col-12">
+            <input asp-for="category.DisplayOrder" class="form-control border-0 shadow" />
+            <label asp-for="category.DisplayOrder" class="ms-2"></label>
+            <span asp-validation-for="category.DisplayOrder" class="text-danger"></span>
+        </div>
+
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-page="index"  class="btn btn-outline-primary border  form-control">
+                    Back to List
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+@* adding client side validation through shared/_ValidationScriptsPartial  *@
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
